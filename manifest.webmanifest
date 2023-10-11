@@ -7,8 +7,8 @@
   "description": "Lista de Ventas para cuando estás vendiendo",
 
   // Scope y start URL - Se pone el ámbito de uso de tu app
-  "scope": "/github-page-pwa/",
-  "start_url": "/github-page-pwa/",
+  "scope": "/",
+  "start_url": "/GenPrecio.html",
 
   // colores de la aplicacion como se muestran en tu app
   "background_color": "#e8c46d",

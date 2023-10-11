@@ -37,7 +37,14 @@
 
             <ul id="listado-productos"></ul>
         </div>
-
+        <script>
+            if (navigator.serviceWorker) {
+                navigator.serviceWorker.register(
+                        '/worker.js',
+                        {scope: '/'}
+                );
+            }
+        </script>
         <script src="./script.js"></script>
     </body>
 </html>
