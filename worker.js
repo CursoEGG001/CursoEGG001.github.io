@@ -14,8 +14,9 @@ var VERSION = 'version_00';
 // Los archivos que serán entregados al usuario en offline. asegurate de 
 // agregar otros a la lista
 var URLS = [    
-  `${GHPATH}/`,
-  `${GHPATH}/GenPrecio.html`,
+  `${GHPATH}`,
+  `${GHPATH}/index.html`,
   `${GHPATH}/styles.css`,
-  `${GHPATH}/script.js`
+  `${GHPATH}/script.js`,
+  `${GHPATH}/GLV.png`
 ]

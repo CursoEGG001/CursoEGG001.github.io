@@ -8,7 +8,7 @@
 
   // Scope y start URL - Se pone el ámbito de uso de tu app
   "scope": "/",
-  "start_url": "/GenPrecio.html",
+  "start_url": "/index.html",
 
   // colores de la aplicacion como se muestran en tu app
   "background_color": "#e8c46d",
