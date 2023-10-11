@@ -1,0 +1,31 @@
+
+{
+  // Nombre de la aplicación y su version corta en caso que no quepa.
+  "name": "Lista de Venta",
+  "short_name": "Lst. Venta",
+  // Descripcion de lo que es tu app
+  "description": "Lista de Ventas para cuando estás vendiendo",
+
+  // Scope y start URL - Se pone el ámbito de uso de tu app
+  "scope": "/github-page-pwa/",
+  "start_url": "/github-page-pwa/",
+
+  // colores de la aplicacion como se muestran en tu app
+  "background_color": "#e8c46d",
+  "theme_color": "blueviolet",
+
+  // Pantalla de la app 
+  //Este puede ser "standalone", "fullscreen", "minimal-ui" o "browser"
+  "display": "standalone", 
+  
+  // Los posibles iconos a mostrar. Asegurese de cambiar la URL de src,
+  // el tipo y tamaño a usar. Si el tamaño no es correcto, 
+  // no podrás instalar la app. 
+  "icons": [
+      {
+        "src": "/GLV.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+  ]
+}
