@@ -15,12 +15,12 @@ var VERSION = 'version_01d';
 // agregar otros a la lista
 var URLS = [
     `${GHPATH}`,
-    `${GHPATH}/index.html`,
-    `${GHPATH}/worker.js`,
-    `${GHPATH}/style.css`,
-    `${GHPATH}/script.js`,
-    `${GHPATH}/GLV-sm.png`,
-    `${GHPATH}/GLV.png`
+    `${GHPATH}index.html`,
+    `${GHPATH}worker.js`,
+    `${GHPATH}style.css`,
+    `${GHPATH}script.js`,
+    `${GHPATH}GLV-sm.png`,
+    `${GHPATH}GLV.png`
 ]
 
 const cacheName = `${APP_PREFIX}${VERSION}`;
