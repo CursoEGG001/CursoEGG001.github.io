@@ -10,6 +10,8 @@
   "scope": "/",
   "start_url": "/index.html",
 
+"serviceworker": "/worker.js",
+
   // colores de la aplicacion como se muestran en tu app
   "background_color": "#e8c46d",
   "theme_color": "blueviolet",
