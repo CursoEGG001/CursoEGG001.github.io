@@ -76,17 +76,17 @@ addProductBtn.addEventListener('click', () => {
 
     var producto = document.getElementById('producto');
     if (producto.hasAttribute('list')) {
-        let otraOpcion = document.createElement('option')
-        otraOpcion.value=producto.value
-        document.getElementById('productosAnteriores').appendChild(otraOpcion)
+        let otraOpcion = document.createElement('option');
+        otraOpcion.value=producto.value;
+        document.getElementById('productosAnteriores').appendChild(otraOpcion);
     } else {
-        producto.setAttribute('list', 'productosAnteriores')
-        let nuevaLista = document.createElement('datalist')
-        let nuevaOpcion = document.createElement('option')
-        nuevaLista.setAttribute('id', 'productosAnteriores')
-        nuevaOpcion.value = producto.value
-        nuevaLista.appendChild(nuevaOpcion)
-        producto.appendChild(nuevaLista)
+        producto.setAttribute('list', 'productosAnteriores');
+        let nuevaLista = document.createElement('datalist');
+        let nuevaOpcion = document.createElement('option');
+        nuevaLista.setAttribute('id', 'productosAnteriores');
+        nuevaOpcion.value = producto.value;
+        nuevaLista.appendChild(nuevaOpcion);
+        producto.appendChild(nuevaLista);
 
     }
 
