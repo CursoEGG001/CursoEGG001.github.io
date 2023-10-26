@@ -58,7 +58,6 @@ function VerificaUnidad() {
     let cuantos = cantidadUnidad.value;
     let costoUnidad = precioUnidad.value;
     let d;
-    console.log(typeof (cuantos), typeof costoUnidad);
     switch (unitSelect.value) {
         case "g":
             d = 1;
@@ -76,6 +75,20 @@ function VerificaUnidad() {
 addProductBtn.addEventListener('click', () => {
 
     var producto = document.getElementById('producto');
+    if (producto.hasAttribute('list')) {
+        let otraOpcion = document.createElement('option')
+        otraOpcion.value=producto.value
+        document.getElementById('productosAnteriores').appendChild(otraOpcion)
+    } else {
+        producto.setAttribute('list', 'productosAnteriores')
+        let nuevaLista = document.createElement('datalist')
+        let nuevaOpcion = document.createElement('option')
+        nuevaLista.setAttribute('id', 'productosAnteriores')
+        nuevaOpcion.value = producto.value
+        nuevaLista.appendChild(nuevaOpcion)
+        producto.appendChild(nuevaLista)
+
+    }
 
     var total = VerificaUnidad();
     const listItem = document.createElement('li');
