@@ -4,11 +4,7 @@ const productList = document.getElementById('listado-productos');
 const addProductBtn = document.getElementById('suma-producto');
 const unitSelect = document.getElementById('unidad-medida');
 const deleteListBtn = document.getElementById('borra-lista');
-const elemProducto = document.getElementById('producto')
-var producto = elemProducto.value;
-var precioUnidad = document.getElementById('precio-unidad');
-var cantidadUnidad = document.getElementById('cantidad-unidad');
-var unit = document.getElementById('unidad-medida').value;
+const elemProducto = document.getElementById('producto');
 const totalPrice = 0;
 
 var productPrices = productList.querySelectorAll('.precio-producto');
@@ -20,16 +16,23 @@ function updateLabels() {
     const pesoEtiqueta = document.querySelector('label[for="cantidad-unidad"]');
     const precioEtiqueta = document.querySelector('label[for="precio-unidad"]');
 
-    if (unit === 'g') {
-        pesoEtiqueta.textContent = 'Peso (gr.):';
-        precioEtiqueta.textContent = 'Precio por kg:';
-    } else if (unit === 'kg') {
-        pesoEtiqueta.textContent = 'Peso ( kg ):';
-        precioEtiqueta.textContent = 'Precio por kg:';
-    } else if (unit === 'unit') {
-        pesoEtiqueta.textContent = 'Cantidad:';
-        precioEtiqueta.textContent = 'Precio por unidad:';
+    switch (unit) {
+        case 'g':
+            pesoEtiqueta.textContent = 'Peso (gr.):';
+            precioEtiqueta.textContent = 'Precio por kg:';
+            break;
+        case 'kg':
+            pesoEtiqueta.textContent = 'Peso ( kg ):';
+            precioEtiqueta.textContent = 'Precio por kg:';
+            break;
+        case 'unit':
+            pesoEtiqueta.textContent = 'Cantidad:';
+            precioEtiqueta.textContent = 'Precio por unidad:';
+            break;
+        default:
+            console.log('Unidad no válida');
     }
+
 }
 
 function BorraLista() {
@@ -43,29 +46,53 @@ deleteListBtn.addEventListener('click', () => {
     BorraLista();
 });
 
+function CalcularPrecio(cantidad, valor) {
+    return cantidad * valor;
+}
+
 function VerificaUnidad() {
-    let total = 0;
-    switch (unit) {
+
+    let calculo;
+    let precioUnidad = document.getElementById('precio-unidad');
+    let cantidadUnidad = document.getElementById('cantidad-unidad');
+    let cuantos = cantidadUnidad.value;
+    let costoUnidad = precioUnidad.value;
+    let d;
+    switch (unitSelect.value) {
         case "g":
-            total = cantidadUnidad.value * precioUnidad.value / 1000;
+            d = 1;
             break;
-        case "kg", "unit":
-            total = cantidadUnidad.value * precioUnidad.value;
-            break;
+        case "kg":
+        case "unit":
+            d = 1000;
         default:
             break;
     }
-    return total
+    calculo = cuantos * costoUnidad * (d / 1000);
+    return parseFloat(calculo).toFixed(2);
 }
 
 addProductBtn.addEventListener('click', () => {
-    unit = document.getElementById('unidad-medida').value;
-    producto = document.getElementById('producto');
-    precioUnidad = document.getElementById('precio-unidad');
-    cantidadUnidad = document.getElementById('cantidad-unidad');
-    let total = VerificaUnidad();
+
+    var producto = document.getElementById('producto');
+    if (producto.hasAttribute('list')) {
+        let otraOpcion = document.createElement('option');
+        otraOpcion.value=producto.value;
+        document.getElementById('productosAnteriores').appendChild(otraOpcion);
+    } else {
+        producto.setAttribute('list', 'productosAnteriores');
+        let nuevaLista = document.createElement('datalist');
+        let nuevaOpcion = document.createElement('option');
+        nuevaLista.setAttribute('id', 'productosAnteriores');
+        nuevaOpcion.value = producto.value;
+        nuevaLista.appendChild(nuevaOpcion);
+        producto.appendChild(nuevaLista);
+
+    }
+
+    var total = VerificaUnidad();
     const listItem = document.createElement('li');
-    listItem.innerHTML = `<span class="nombre-producto">${producto.value}</span><span class="precio-producto">$ ${parseFloat(total).toFixed(2)}</span>`;
+    listItem.innerHTML = `<span class="nombre-producto">${producto.value}</span><span class="precio-producto">$ ${total}</span>`;
     productList.appendChild(listItem);
     form.reset();
     updateLabels();
