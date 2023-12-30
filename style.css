@@ -57,6 +57,7 @@ label {
 
 input[type="number"] {
     display: inline-flex;
+    background: conic-gradient(from 45deg at 4% 66%,#0101010d, #787878aa, #ffffffdf);
     padding: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -68,6 +69,7 @@ input[type="number"] {
 }
 input[type="text"] {
     display: inline-flex;
+    background: conic-gradient(from 135deg at 2% 33%,#0101010d, #787878aa, #ffffffdf);
     font-size: larger;
     padding: 5px;
     border-radius: 5px;
@@ -80,26 +82,33 @@ input[type="text"] {
 }
 
 button {
-    background-color: #007bff;
+    background-color: #007bffdd;
     color: #fff;
     padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 10px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease 0s;
 }
 
 
 select {
     color:black;
+    background: #ffffff77;
     margin-right: 10px;
     padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 3px 2px 1px #00000033;
     z-index: 0;
 }
 
 
 button:hover {
-    background-color: #0062cc;
+    background-color: #07010fff;
+    box-shadow: 0px 15px 20px rgba(240, 255, 247, 0.7);
 }
 
 ul {
@@ -113,7 +122,7 @@ li {
 }
 
 .group-row {
-    display: inline-block;
+    display: contents;
     flex: 1 0 auto;
 }
 
