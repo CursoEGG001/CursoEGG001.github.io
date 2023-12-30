@@ -5,7 +5,8 @@ body
     padding: 0;
     height: auto;
     background-color: whitesmoke; /* For browsers that do not support gradients */
-    background-image: repeating-linear-gradient(45deg,lightsalmon,yellow 7%,blueviolet 10%);
+    background-image:
+        repeating-linear-gradient(45deg,lightsalmon,yellow 7%,blueviolet 10%);
 }
 
 h1 {
