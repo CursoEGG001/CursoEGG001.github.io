@@ -9,7 +9,7 @@ var APP_PREFIX = 'GLV_EGG_';
 // necesitas cambiar esta version (version_01, version_02…). 
 // Si no cambias la versión, el service worker le entregará
 // los archivos viejos al usuario!
-var VERSION = 'version_01ts';
+var VERSION = 'version_01tw';
 
 // Los archivos que serán entregados al usuario en offline. asegurate de 
 // agregar otros a la lista
@@ -24,8 +24,15 @@ var URLS = [
 ]
 
 const cacheName = `${APP_PREFIX}${VERSION}`;
-// List the files to precache
+// Lista los archivos a la precache
 const precacheResources = URLS;
+
+const enableNavigationPreload = async () => {
+    if (self.registration.navigationPreload) {
+        // Habilita precargar navegación.
+        await self.registration.navigationPreload.enable();
+    }
+};
 
 // Cuando service worker se instale, abre la cache y agrega el recurso precache a este
 self.addEventListener('install', (event) => {
@@ -35,6 +42,7 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('activate', (event) => {
     console.log('-Evento activate de Service worker-');
+    event.waitUntil(enableNavigationPreload());
 });
 
 // Cuando hay un pedido de extracción, intenta y responde con un recurso precargado, de otro modo vuelve por red
