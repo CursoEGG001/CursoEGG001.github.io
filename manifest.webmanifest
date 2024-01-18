@@ -33,6 +33,12 @@
         "src": "/GLV-sm.png",
         "type": "image/png",
         "sizes": "64x64"
-      }
+      },
+      {
+        "src": "/maskable_GLV.png",
+        "sizes": "196x196",
+        "type": "image/png",
+        "purpose": "maskable"
+    }
   ]
 }

@@ -8,6 +8,7 @@ const elemProducto = document.getElementById('producto');
 const totalPrice = 0;
 const sumBtn = document.createElement('button');
 const totalText = document.createElement('h2');
+const statusInfo= document.getElementById('status-line');
 
 var productPrices = productList.querySelectorAll('.precio-producto');
 var GenPrecioDB = indexedDB.open("GenPrecioDB", 1100);
@@ -115,7 +116,7 @@ GenPrecioDB.onsuccess = (infoGuardada) => {
         const almacen = transaccion.objectStore("itemsGuardados");
         const pedido = almacen.add({id: Date.now(), prodGuardado: data});
         pedido.onsuccess = (agrega) => {
-            window.status= agrega.toString();
+            statusInfo.textContent = "Esto se agregó: " + agrega.toString();
         };
 
     }
@@ -176,5 +177,3 @@ GenPrecioDB.onsuccess = (infoGuardada) => {
 GenPrecioDB.onerror = (event) => {
     console.error("Error abriendo base de datos:", event.target.error);
 };
-
-

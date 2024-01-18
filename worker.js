@@ -9,7 +9,7 @@ var APP_PREFIX = 'GLV_EGG_';
 // necesitas cambiar esta version (version_01, version_02…). 
 // Si no cambias la versión, el service worker le entregará
 // los archivos viejos al usuario!
-var VERSION = 'version_01uf';
+var VERSION = 'version_01vc';
 
 // Los archivos que serán entregados al usuario en offline. asegurate de 
 // agregar otros a la lista
@@ -68,7 +68,7 @@ const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
         // when even the fallback response is not available,
         // there is nothing we can do, but we must always
         // return a Response object
-        return new Response('Pasó un error de red', {
+        return new Response('Sucedió un error de red', {
             status: 408,
             headers: {'Content-Type': 'text/plain'},
         });
