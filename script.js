@@ -8,7 +8,7 @@ const elemProducto = document.getElementById('producto');
 const totalPrice = 0;
 const sumBtn = document.createElement('button');
 const totalText = document.createElement('h2');
-const statusInfo= document.getElementById('status-line');
+const statusInfo = document.getElementById('status-line');
 
 var productPrices = productList.querySelectorAll('.precio-producto');
 var GenPrecioDB = indexedDB.open("GenPrecioDB", 1100);
@@ -147,14 +147,23 @@ GenPrecioDB.onsuccess = (infoGuardada) => {
     unitSelect.addEventListener('change', updateLabels);
 
     addProductBtn.addEventListener('click', () => {
-
-        AddElementToSelector();
-        AddElementToList();
-        form.reset();
-        updateLabels();
-        if (totalText !== null)
-            totalText.textContent = "";
-
+        let precioUnidad = document.getElementById('precio-unidad');
+        let cantidadUnidad = document.getElementById('cantidad-unidad');
+        if (
+                elemProducto.value === '' ||
+                precioUnidad.value === '' ||
+                precioUnidad.value <= 0 ||
+                cantidadUnidad.value == 0 ||
+                cantidadUnidad.value === '') {
+            window.alert("Ingrese un Nombre y precio para el producto");
+        } else {
+            AddElementToSelector();
+            AddElementToList();
+            form.reset();
+            updateLabels();
+            if (totalText !== null)
+                totalText.textContent = "";
+        }
     });
 
     totalText.setAttribute('class', 'suma-total');
