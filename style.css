@@ -121,11 +121,18 @@ ul {
 }
 
 li {
-    margin-bottom: 10px;
+    padding: 1% 1.2% 1% 1.2%;
+    flex-grow: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5vh;
 
 }
 
 .status-line {
+    margin: 2px 3px 1px 2px;
     text-align: center;
     text-shadow: -1px 1px 0 #d4d4d434,
         1px -1px 0 #52525266;
@@ -251,6 +258,8 @@ li {
 }
 
 .suma-total {
+    margin-right: 2vw;
+    margin-left: 1vw;
     display: inline-block;
     font-weight: bold;
     color: #330033;

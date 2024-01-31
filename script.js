@@ -184,7 +184,7 @@ GenPrecioDB.onsuccess = (infoGuardada) => {
     totalText.setAttribute('class', 'suma-total');
     sumBtn.textContent = 'Sumar todo';
     productList.insertAdjacentElement('afterend', sumBtn);
-    sumBtn.insertAdjacentElement('afterend', totalText);
+    sumBtn.insertAdjacentElement('beforeBegin', totalText);
     sumBtn.addEventListener('click', () => {
 
         productPrices = productList.querySelectorAll('.precio-producto');
