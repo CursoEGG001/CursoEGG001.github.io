@@ -121,6 +121,12 @@ li {
 
 }
 
+.status-line {
+    text-align: center;
+    text-shadow: -1px 1px 0 #d4d4d434,
+        1px -1px 0 #52525266;
+}
+
 .group-row {
     display: contents;
     flex: 1 0 auto;

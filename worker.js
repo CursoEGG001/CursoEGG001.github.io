@@ -9,7 +9,7 @@ var APP_PREFIX = 'GLV_EGG_';
 // necesitas cambiar esta version (version_01, version_02…). 
 // Si no cambias la versión, el service worker le entregará
 // los archivos viejos al usuario!
-var VERSION = 'version_02aa';
+var VERSION = 'version_02fb';
 
 // Los archivos que serán entregados al usuario en offline. asegurate de 
 // agregar otros a la lista
@@ -90,10 +90,6 @@ self.addEventListener('install', (event) => {
             );
 });
 
-//self.addEventListener('install', (event) => {
-//    console.log('-Evento install de Service worker-', URLS);
-//    event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(precacheResources)));
-//});
 
 self.addEventListener('activate', (event) => {
     console.log('-Evento activate de Service worker-');
@@ -113,14 +109,3 @@ self.addEventListener('fetch', (event) => {
             );
 });
 
-//self.addEventListener('fetch', (event) => {
-//    console.log('Fetch interceptado para:', event.request.url);
-//    event.respondWith(
-//            caches.match(event.request).then((cachedResponse) => {
-//        if (cachedResponse) {
-//            return cachedResponse;
-//        }
-//        return fetch(event.request);
-//    }),
-//            );
-//});
