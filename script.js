@@ -76,8 +76,11 @@ function BorraLista(infoGuardada) {
         pedido.onsuccess = () => {
             productList.innerHTML = '';
             totalText.textContent = '';
-        };
+
+        }
+        ;
     }
+    AddElementFromDB();
 }
 
 // Agrega la lista de elementos guardados en la base de datos a la lista de venta.

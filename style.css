@@ -9,6 +9,11 @@ body
         repeating-linear-gradient(45deg,lightsalmon,yellow 7%,blueviolet 10%);
 }
 
+div {
+    display: flex;
+    flex-direction: column;
+}
+
 h1 {
     background: linear-gradient(
         90deg,
@@ -30,6 +35,11 @@ h1 {
     padding: 20px;
     text-align: center;
 }
+
+#ingreso-datos {
+    display: flex;
+}
+
 #container {
     max-width: 78%;
     margin: 0 auto;
@@ -116,8 +126,14 @@ button:hover {
 }
 
 ul {
+    display: inline-flex;
     list-style: none;
     padding: 0;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    justify-content: space-between;
+    align-items: stretch;
 }
 
 li {
@@ -128,14 +144,34 @@ li {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 1.5vh;
+    animation: rebote 350ms cubic-bezier(0.68, -0.6, 0.32, 1.6) 85ms 1 alternate both;
 
 }
 
-.status-line {
-    margin: 2px 3px 1px 2px;
-    text-align: center;
-    text-shadow: -1px 1px 0 #d4d4d434,
-        1px -1px 0 #52525266;
+.contenedor-seccion {
+    display: flex;
+    align-content: stretch;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#borra-lista {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+}
+
+#contenedor-lista {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-end;
 }
 
 .group-row {
@@ -143,6 +179,10 @@ li {
     flex: 1 0 auto;
     flex-direction: row;
     vertical-align: bottom;
+    align-content: space-between;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
 }
 
 .nombre-producto {
@@ -245,16 +285,11 @@ li {
     border-radius: 3px;
 }
 
-@keyframes glowing-span-85 {
-    0% {
-        background-position: 0 0;
-    }
-    50% {
-        background-position: 400% 0;
-    }
-    100% {
-        background-position: 0 0;
-    }
+.status-line {
+    margin: 2px 3px 1px 2px;
+    text-align: center;
+    text-shadow: -1px 1px 0 #d4d4d434,
+        1px -1px 0 #52525266;
 }
 
 .suma-total {
@@ -267,4 +302,126 @@ li {
         1px -1px 2px whitesmoke,
         0 0 1em gray,
         0 0 0.2em grey;
+}
+
+
+@keyframes glowing-span-85 {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes rebote {
+    0% {
+        animation-timing-function: ease-in;
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    78% {
+        animation-timing-function: ease-out;
+        opacity: 0.24;
+        transform: scale(1);
+    }
+
+    85% {
+        animation-timing-function: ease-in-out;
+        opacity: .27;
+        transform: scale(0.7);
+    }
+
+    92% {
+        animation-timing-function: ease-out;
+        opacity: .31;
+        transform: scale(1);
+    }
+
+    94% {
+        animation-timing-function: ease-in-out;
+        opacity: 1;
+        transform: scale(0.84);
+    }
+
+    95% {
+        animation-timing-function: ease-out;
+        transform: scale(1);
+    }
+
+    97% {
+        animation-timing-function: ease-in-out;
+        transform: scale(0.95);
+    }
+
+    100% {
+        animation-timing-function: ease-out;
+        transform: scale(1);
+    }
+}
+
+
+@media (orientation: landscape) and (min-width: 890px) {
+    #borra-lista {
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        justify-content: flex-start;
+        align-items: flex-end;
+        flex-wrap: nowrap;
+    }
+
+    #cabecera {
+        display: flex;
+    }
+
+    #container {
+        max-width: 91%;
+        margin: 0 auto;
+    }
+
+    #form {
+        float: left;
+        width: 40%;
+    }
+
+    #contenedor-lista {
+        float: right;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    .contenedor-seccion {
+        display: flex;
+        align-content: stretch;
+        justify-content: flex-start;
+        align-items: stretch;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .group-row {
+        display: flex;
+        flex: 1 0 auto;
+        vertical-align: bottom;
+        justify-content: space-between;
+        align-items: stretch;
+        flex-direction: row;
+        align-content: stretch;
+        flex-wrap: nowrap;
+    }
+
+    #ingreso-datos {
+        display: flex;
+    }
+
 }
