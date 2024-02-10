@@ -164,12 +164,7 @@ li {
 }
 
 .contenedor-seccion {
-    display: flex;
-    align-content: stretch;
-    justify-content: flex-start;
-    align-items: stretch;
-    flex-direction: column;
-    flex-wrap: wrap;
+    display: block;
 }
 
 #borra-lista {
@@ -379,27 +374,30 @@ li {
 }
 
 
-@media (orientation: landscape) and (min-width: 890px) {
-    
+@media (orientation: landscape) and (min-width: 680px) {
+    body {
+        font-family: Arial,sans-serif;
+        font-size: x-small;
+    }
     h1 {
-    background: linear-gradient(
-        90deg,
-        #aaaaaaff,
-        #ccccccdd,
-        #999999aa,
-        #77777766,
-        #66666644,
-        #55555533,
-        #33333322,
-        #11111111,
-        #33003302
-        );
-    color: white;
-    text-shadow: 0px -1px 1px grey, 1px 2px 2px gray, 2px 2px 3px black;
-    padding: 8px;
-    text-align: center;
-}
-    
+        background: linear-gradient(
+            90deg,
+            #aaaaaaff,
+            #ccccccdd,
+            #999999aa,
+            #77777766,
+            #66666644,
+            #55555533,
+            #33333322,
+            #11111111,
+            #33003302
+            );
+        color: white;
+        text-shadow: 0px -1px 1px grey, 1px 2px 2px gray, 2px 2px 3px black;
+        padding: 8px;
+        text-align: center;
+    }
+
     #borra-lista {
         display: flex;
         flex-direction: column;
@@ -420,6 +418,46 @@ li {
 
     #form {
         max-width: 40vw;
+        font-size: x-small;
+    }
+
+    label {
+        display: inline-flex;
+        align-content: flex-start;
+        align-items: center;
+        vertical-align: baseline;
+        margin-bottom: 3px;
+        color: black;
+        text-shadow:
+            .12em -.07em 2px whitesmoke,
+            .04em .09em 1em gray,
+            0 0 0.2em grey;
+    }
+
+    input[type="number"] {
+        display: inline-flex;
+        background: conic-gradient(from 45deg at 4% 66%,#0101010d, #787878aa, #ffffffdf);
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        flex: 1 1 0;
+        margin-right: 10px;
+        box-shadow: 1px 2px 2px 1px #00000022;
+
+    }
+    input[type="text"] {
+        display: inline-flex;
+        background: conic-gradient(from 135deg at 2% 33%,#0101010d, #787878aa, #ffffffdf);
+        font-size: x-small;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        flex: 1 1 0;
+        margin-right: 10px;
+        box-shadow: 1px 2px 2px 1px #00000022;
+
     }
 
     #contenedor-lista {
@@ -434,12 +472,7 @@ li {
     }
 
     .contenedor-seccion {
-        display: flex;
-        align-content: stretch;
-        justify-content: flex-start;
-        align-items: stretch;
-        flex-direction: column;
-        flex-wrap: wrap;
+        display: block;
     }
 
     .group-row {
