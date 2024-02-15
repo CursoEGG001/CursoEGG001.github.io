@@ -46,7 +46,7 @@ h1 {
 
 form {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: stretch;
@@ -167,6 +167,10 @@ li {
 
 .contenedor-seccion {
     display: block;
+}
+
+#cantidad-unidad {
+    width: 11vmax;
 }
 
 #borra-lista {
@@ -395,8 +399,11 @@ li {
             #33003302
             );
         color: white;
-        text-shadow: 0 -.1em .1em grey, .1em .2em .2em gray, .2em .2em .3em black;
-        padding: .8em;
+        text-shadow:
+            0 -0.071em 0.05em grey,
+            0.1em 0.2em 0.2em gray,
+            0.06em 0.12em 0.12em black;
+        padding: 0.8em;
         text-align: center;
     }
 
@@ -474,7 +481,7 @@ li {
 
     .contenedor-seccion {
         display: block;
-        max-width: 39vw;
+        max-width: 92vw;
     }
 
     .group-row {
@@ -500,8 +507,8 @@ li {
     .seccion-titulo {
         display: flex;
         flex-direction: column;
-        align-content: flex-start;
-        justify-content: flex-start;
+        align-content: stretch;
+        justify-content: space-evenly;
         align-items: stretch;
         flex-wrap: wrap;
     }
@@ -509,8 +516,10 @@ li {
     #ingreso-datos {
         float: left;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
+        flex: 0.3 0.3 auto;
+        justify-content: space-around;
+        align-items: stretch;
     }
 
 }
