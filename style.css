@@ -1,9 +1,9 @@
 body
 {
-    font-family: Arial, sans-serif;
-    margin: 0.02rem;
-    padding: 0.025rem;
-    height: auto;
+    font: 1.87vw/1.46 "Arial", sans-serif;
+    margin: 0.02em;
+    padding: 0.025em;
+    width: auto;
     background-color: whitesmoke; /* For browsers that do not support gradients */
     background-image:
         repeating-linear-gradient(45deg,lightsalmon,yellow 7%,blueviolet 10%);
@@ -28,9 +28,9 @@ h1 {
         #33003302
         );
     color: white;
-    text-shadow: 0 -0.1em 0.1em grey,
-        .1em .2em .2em gray,
-        .2em .2em .23em black;
+    text-shadow: 0 -0.1em 0.071em grey,
+        .1em .2em .081em gray,
+        .2em .2em .11em black;
     padding: 1em;
     text-align: center;
 }
@@ -40,7 +40,7 @@ h1 {
 }
 
 #container {
-    max-width: 78%;
+    max-width: 95%;
     margin: 0 auto;
 }
 
@@ -55,11 +55,12 @@ form {
 
 
 label {
+    font: condensed bold 1.1em "Arial", sans-serif;
     display: inline-flex;
     align-content: flex-start;
     align-items: center;
     vertical-align: baseline;
-    margin-bottom: .023em;
+    margin-bottom: .23em;
     color: black;
     text-shadow:
         .12em -.07em .15em whitesmoke,
@@ -68,6 +69,7 @@ label {
 }
 
 input[type="number"] {
+    font: condensed bold 1.1em "Arial", sans-serif;
     display: inline-flex;
     background: conic-gradient(from 45deg at 4% 66%,#0101010d, #787878aa, #ffffffdf);
     padding: 0.33em;
@@ -80,6 +82,7 @@ input[type="number"] {
 
 }
 input[type="text"] {
+    font: condensed bold 1.1em "Arial", sans-serif;
     display: inline-flex;
     background: conic-gradient(from 135deg at 2% 33%,#0101010d, #787878aa, #ffffffdf);
     font-size: larger;
@@ -94,6 +97,7 @@ input[type="text"] {
 }
 
 button {
+    font: condensed bold 1.1em "Arial", sans-serif;
     flex-grow: inherit;
     background-color: #007bffdd;
     color: #fff;
@@ -106,8 +110,8 @@ button {
     transition: all 0.3s ease 0s;
 }
 
-
 select {
+    font: condensed bold 1.1em "Arial", sans-serif;
     color:black;
     background: #ffffff77;
     margin:0 .55em .55em 0;
@@ -142,7 +146,7 @@ li {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 0.65vh;
+    margin-bottom: 0.55vh;
     animation: rebote 350ms cubic-bezier(0.68, -0.6, 0.32, 1.6) 85ms 1 alternate both;
 }
 
@@ -169,7 +173,7 @@ li {
 }
 
 #cantidad-unidad {
-    width: 11vmax;
+    width: 11ch;
 }
 
 #borra-lista {
@@ -381,9 +385,15 @@ li {
 
 
 @media (orientation: landscape) and (min-width: 680px) {
-    body {
-        font-family: Arial,sans-serif;
-        font-size: small;
+    body
+    {
+        font: 1.33svw/0.88 "Arial", sans-serif;
+        margin: 0.02rem;
+        padding: 0.025rem;
+        height: auto;
+        background-color: whitesmoke; /* For browsers that do not support gradients */
+        background-image:
+            repeating-linear-gradient(45deg,lightsalmon,yellow 7%,blueviolet 10%);
     }
     h1 {
         background: linear-gradient(
@@ -433,6 +443,7 @@ li {
     }
 
     label {
+        font: condensed bold 1.02svw "Arial", sans-serif;
         display: inline-flex;
         align-content: flex-start;
         align-items: center;
@@ -446,6 +457,7 @@ li {
     }
 
     input[type="number"] {
+        font: condensed bold 1.02svw "Arial", sans-serif;
         display: inline-flex;
         background: conic-gradient(from 45deg at 4% 66%,#0101010d, #787878aa, #ffffffdf);
         padding: .25em;
@@ -458,6 +470,7 @@ li {
 
     }
     input[type="text"] {
+        font: condensed bold 1.02svw "Arial", sans-serif;
         display: inline-flex;
         background: conic-gradient(from 135deg at 2% 33%,#0101010d, #787878aa, #ffffffdf);
         font-size: large;
@@ -468,7 +481,18 @@ li {
         flex: 1 .01 0;
         margin-right: 1em;
         box-shadow: .1em .2em .2em .1em #00000022;
+    }
 
+    select {
+        font: condensed bold 1.02svw "Arial", sans-serif;
+        color:black;
+        background: #ffffff77;
+        margin:0 .55em .55em 0;
+        padding: 0.33em;
+        border-radius: .29em;
+        border: 1px solid #ccc;
+        box-shadow: .2em .3em .2em .1em #00000033;
+        z-index: 0;
     }
 
     #contenedor-lista {
@@ -480,13 +504,13 @@ li {
     }
 
     .contenedor-seccion {
-        display: block;
+        display: inline;
         max-width: 92vw;
     }
 
     .group-row {
         display: flex;
-        flex: 0.85 0 auto;
+        flex: 0.33 0 auto;
         vertical-align: bottom;
         justify-content: space-around;
         align-items: stretch;

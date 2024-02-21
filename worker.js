@@ -9,7 +9,7 @@ var APP_PREFIX = 'GLV_EGG_';
 // necesitas cambiar esta version (version_01, version_02…). 
 // Si no cambias la versión, el service worker le entregará
 // los archivos viejos al usuario!
-var VERSION = 'version_030b';
+var VERSION = 'version_030g';
 
 // Los archivos que serán entregados al usuario en offline. asegurate de 
 // agregar otros a la lista
